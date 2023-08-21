@@ -1,5 +1,5 @@
 const placeorder=()=>{
-    return new Promise ((reject,resolve)=>{
+    return new Promise ((resolve,reject)=>{
             setTimeout(() => {
                 resolve();
             }, 1000);
@@ -7,7 +7,7 @@ const placeorder=()=>{
 }
 
 const startproduction=()=>{
-    return new Promise ((reject,resolve)=>{
+    return new Promise ((resolve, reject)=>{
             setTimeout(() => {
                 resolve();
             }, 1000);
@@ -15,7 +15,7 @@ const startproduction=()=>{
 }
 
 const printID=()=>{
-    return new Promise ((reject,resolve)=>{
+    return new Promise ((resolve,reject)=>{
             setTimeout(() => {
                 resolve();
             }, 1000);
@@ -23,7 +23,7 @@ const printID=()=>{
 }
 
 const productname=()=>{
-    return new Promise ((reject,resolve)=>{
+    return new Promise ((resolve,reject)=>{
             setTimeout(() => {
                 resolve();
             }, 1000);
@@ -31,7 +31,7 @@ const productname=()=>{
 }
 
 const productdesc=()=>{
-    return new Promise ((reject,resolve)=>{
+    return new Promise ((resolve,reject)=>{
             setTimeout(() => {
                 resolve();
             }, 1000);
@@ -47,19 +47,19 @@ placeorder()
     })
 
     .then(()=>{
-        console.log("product is in production")
+        console.log("ID printing started")
 
         return printID();
 
     })
     .then(()=>{
-        console.log("product is in production")
+        console.log("product item started printing")
 
         return productname();
 
     })
     .then(()=>{
-        console.log("product is in production")
+        console.log("product description started ")
 
         return productdesc();
 
