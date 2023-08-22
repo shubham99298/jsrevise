@@ -33,7 +33,7 @@ const productname=()=>{
 const productdesc=()=>{
     return new Promise ((resolve,reject)=>{
             setTimeout(() => {
-                resolve();
+                resolve(); 
             }, 1000);
         })
 }
