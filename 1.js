@@ -25,7 +25,7 @@ const data = {
     },
     B: {
       Subjects: ["English", "Physics", "Chemistry"],
-      Faculty: ["Mary Adams", "Michael Clark", "Sarah Evans"],
+      Faculty: ["John Smith", "Jane Doe", "Sarah Evans"],
       "Start Date": "2023-08-15",
       "End Date": "2023-12-31",
       Branches: {
@@ -49,7 +49,7 @@ const data = {
     },
     C: {
       Subjects: ["Computer Science", "Economics", "Psychology"],
-      Faculty: ["George Lee", "Helen Davis", "Ivy Martin"],
+      Faculty: ["George Lee", "Helen Davis", "John Smith"],
       "Start Date": "2023-09-15",
       "End Date": "2023-12-31",
       Branches: {
@@ -74,7 +74,7 @@ const data = {
   };
  
 
-const subjects = Object.keys(data).map((program) => {
+// const subjects = Object.keys(data).map((program) => {
 //   Programs: program,
  
 //   subjects:data[program].Subjects,
@@ -84,14 +84,47 @@ const subjects = Object.keys(data).map((program) => {
 //   brancches:data[program]["Branches"],
 
   
-});
+// });
 
 // console.log(subjects);
 
 
-const progdata=data.A.Branches["Branch A"].total;
-console.log(progdata);
- 
+// const progdata=data.A.Branches["Branch A"].total;
+// const val=data.B.Branches;
+// const val1=data.A.Subjects;
 
+// console.log(progdata);
+// console.log(val)
+// console.log(val1)
+
+let commonFaculty = [];
+data.A.Faculty.forEach((facultyA) => {
+  const isCommonFaculty =
+    data.B.Faculty.includes(facultyA) && data.C.Faculty.includes(facultyA);
+  if (isCommonFaculty) commonFaculty.push(facultyA);
+});
+
+if (commonFaculty.length === 0) {
+  console.log(`no common faculty`);
+} else {
+  console.log(commonFaculty);
+}
+
+const branchdata=Object.values(data).flatMap((program)=>{
+   return Object.values(program.Branches)
+  // return program
+})
+
+// console.log(branchdata)
+
+const bdata=branchdata.map((Branches)=>{
+  return Branches.total;
+})
+
+console.log(bdata);
+
+bdata.map((data)=>{
+  console.log(data.completed)
+})
  
   
